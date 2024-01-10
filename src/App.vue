@@ -1,13 +1,22 @@
 <script>
+import AppHeader from './components/AppHeader.vue'
+import { store } from './store.js'
 export default {
-
+  components: {
+    AppHeader
+  },
+  data() {
+    return {
+      store
+    }
+  }
 }
 </script>
 <template lang="">
   <div>
-    
+    <AppHeader />
   </div>
 </template>
-<style lang="">
-  
+<style lang="scss">
+@use './styles/generals.scss';
 </style>
