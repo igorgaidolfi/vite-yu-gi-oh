@@ -1,9 +1,9 @@
 <script>
-import AppCardsList from './AppCardsList.vue';
+import CardsList from './CardsList.vue';
 export default {
     name: 'AppMain',
     components: {
-        AppCardsList,
+        CardsList,
     }
 
 }
