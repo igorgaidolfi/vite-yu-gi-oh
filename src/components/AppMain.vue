@@ -10,7 +10,14 @@ export default {
 </script>
 <template lang="">
   <main>
-    <div class="bg-list-cards p-5">
+    <div class="bg-list-cards p-4">
+        <div class="container">
+            <div class="col-1">
+                <select class="form-select mb-4">
+                    <option selected>Alien</option>
+                </select>
+            </div>
+        </div>
         <CardsList/>
     </div>
   </main>
