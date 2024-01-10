@@ -11,7 +11,7 @@ export default {
 <template lang="">
   <main>
     <div class="bg-list-cards p-5">
-        <AppCardsList/>
+        <CardsList/>
     </div>
   </main>
 </template>
