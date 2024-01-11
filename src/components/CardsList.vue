@@ -11,45 +11,52 @@ export default {
 }
 </script>
 <template lang="">
-  <div class="container bg_white">
     <div class="container">
       <div class="row">
-          <div class="col_20" v-for="card,index in store.cardsList" :key="index">
+          <div class="col-20" v-for="card,index in store.cardsList" :key="index">
             <div class="cards_container">
-              <img :src="card.card_images[0].image_url" class="img-fluid" :alt="card.name">
+              <img :src="card.card_images[0].image_url" :alt="card.name">
               <h5 class="text-center my-3">{{card.name}}</h5>
               <div class="text-center archetype">{{card.archetype}}</div>
             </div>
           </div>
       </div>
    </div>
-  </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../styles/partials/variables' as*;
 
-.bg_white {
-  background-color: $white_;
-  padding: 50px 0;
+.container {
+  background-color: $white;
 }
 
-.row .col_20 {
-  width: calc(100%/5);
-}
+.col-20 {
+  width: calc(100%/5 - 20px);
+  margin: 10px;
 
-.cards_container {
-  background-color: $orange_;
-  margin-bottom: 15px;
-  height: calc(100% - 15px);
+  .cards_container {
+    background-color: $orange;
+    width: 100%;
+    margin-bottom: 15px;
+    height: calc(100% - 15px);
 
-  h5 {
-    color: $white_;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
+    img {
+      max-width: 100%;
+    }
 
-  .archetype {
-    font-size: 20px;
+    h5 {
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .archetype {
+      font-size: 20px;
+      text-align: center;
+    }
+
   }
 }
 </style>
