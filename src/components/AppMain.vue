@@ -10,6 +10,13 @@ export default {
     data() {
         return {
             store,
+            archtypes: [
+                'Alien',
+                'Infernoble Arms',
+                'Noble Knight',
+                'Melodious',
+                'Archfiend'
+            ]
         }
     }
 }
@@ -17,8 +24,9 @@ export default {
 <template lang="">
   <main>
         <div class="container">
-            <select class="form-select mb-4">
-                <option selected>Alien</option>
+            <select>
+                <option value="" selected>Select</option>
+                <option v-for="type,index in archtypes" :key="index" :value="type">{{ type }}</option>
             </select>
         </div>
         <div class="container bg-white">
@@ -33,5 +41,13 @@ export default {
 
 .bg-white {
     background-color: $white;
+}
+
+select {
+    width: 15%;
+    height: 30px;
+    margin: 20px 0px 20px 10px;
+    padding-left: 10px;
+    font-size: medium;
 }
 </style>
