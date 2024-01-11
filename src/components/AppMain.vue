@@ -18,13 +18,18 @@ export default {
                 'Archfiend'
             ]
         }
-    }
+    },
+    methods: {
+        selectType() {
+            return this.store.type
+        }
+    },
 }
 </script>
 <template lang="">
   <main>
         <div class="container">
-            <select>
+            <select v-model="store.type" @change="$emit('select_type')">
                 <option value="" selected>Select</option>
                 <option v-for="type,index in archtypes" :key="index" :value="type">{{ type }}</option>
             </select>

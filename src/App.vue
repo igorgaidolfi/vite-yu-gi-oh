@@ -15,8 +15,13 @@ export default {
   },
   methods: {
     getCardsList() {
-      axios.get(store.endpoint).then((response) => {
-        this.store.cardsList = response.data.data
+      let apiUrl = store.endpoint
+      if (store.type != '') {
+        apiUrl += `&archetype=${store.type}`
+      }
+      console.log(apiUrl)
+      axios.get(apiUrl).then((response) => {
+        store.cardsList = response.data.data
       })
     },
 
@@ -29,7 +34,7 @@ export default {
 <template lang="">
   <div>
     <AppHeader />
-    <AppMain />
+    <AppMain @select_type="getCardsList"/>
   </div>
 </template>
 <style lang="scss">
