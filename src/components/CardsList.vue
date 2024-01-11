@@ -6,7 +6,6 @@ export default {
   data() {
     return {
       store,
-      activeCard: 0
     }
   }
 }
@@ -17,9 +16,9 @@ export default {
       <div class="row">
           <div class="col_20" v-for="card,index in store.cardsList" :key="index">
             <div class="cards_container">
-              <img :src="store.cardsList[index].card_images[activeCard].image_url" class="img-fluid" :alt="store.cardsList[index].name">
-              <h5 class="text-center my-3">{{store.cardsList[index].name}}</h5>
-              <div class="text-center archetype">{{store.cardsList[index].archetype}}</div>
+              <img :src="card.card_images[0].image_url" class="img-fluid" :alt="card.name">
+              <h5 class="text-center my-3">{{card.name}}</h5>
+              <div class="text-center archetype">{{card.archetype}}</div>
             </div>
           </div>
       </div>
