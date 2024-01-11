@@ -1,5 +1,5 @@
 <script>
-import axios from 'axios'
+
 import { store } from '../store.js'
 export default {
   name: 'CardList',
@@ -8,17 +8,6 @@ export default {
       store,
       activeCard: 0
     }
-  },
-  methods: {
-    getCardsList() {
-      axios.get(store.endpoint).then((response) => {
-        this.store.cardsList = response.data.data
-      })
-    },
-
-  },
-  created() {
-    this.getCardsList()
   }
 }
 </script>
